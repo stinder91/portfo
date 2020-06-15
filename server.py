@@ -42,15 +42,15 @@ def write_to_csv(data):
 def submit_form():
 	# return 'form submitted successfully'
 	if request.method == 'POST':
-		try:
+    	try:
             data = request.form.to_dict()
             write_to_csv(data)
             write_to_file(data)		
             # print(data)
             # return 'form_submitted'
             return redirect('/thankyou.html')
-	except:
-		return 'Did not save to database'
+        except:
+            return 'Did not save to database'
 	else:
 		return "Something went wrong, please try again"
 
