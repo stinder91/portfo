@@ -43,12 +43,12 @@ def submit_form():
 	# return 'form submitted successfully'
 	if request.method == 'POST':
 		try:
-		data = request.form.to_dict()
-		write_to_csv(data)
-		write_to_file(data)		
-		# print(data)
-		# return 'form_submitted'
-		return redirect('/thankyou.html')
+            data = request.form.to_dict()
+            write_to_csv(data)
+            write_to_file(data)		
+            # print(data)
+            # return 'form_submitted'
+            return redirect('/thankyou.html')
 	except:
 		return 'Did not save to database'
 	else:
